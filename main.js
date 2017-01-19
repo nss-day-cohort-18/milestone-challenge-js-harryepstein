@@ -44,9 +44,8 @@ function createTree  (height){
   printSpaces (height-line)
   printAsterisks(line)
   printAsterisks(line-1)
-  if (line = height) {
-  baseLength = (printAsterisks(line).length + printAsterisks(line-1).length)
-}
+  // if (line = height) {
+  // baseLength = (printAsterisks(line).length + printAsterisks(line-1).length)
   tree += "\n";
   console.log("inside the createTree function")
 }
