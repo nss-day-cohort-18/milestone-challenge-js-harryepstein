@@ -73,6 +73,8 @@ function createTree  (height){
 }
 buildAtrunk();
 console.log(tree);
+let treeDiv = document.getElementById("tree");
+treeDiv.innerHTML = tree;
 }
 
 // Invoke the functio
