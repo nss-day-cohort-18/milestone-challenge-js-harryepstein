@@ -1,27 +1,51 @@
-console.log("this is a test")
+
 //DECLARE SOME GLOBALS FOR LATER PROCUREMENT FROM THE DOM
 let character = "*";
 let space = " ";
 let height = 0;
 let tree = "";
 
-let button = document.getElementById('button');
+/*
+POSSIBLE COWSAY MODUEL INTEGRATION
+*/
 
-button.addEventListener('click', function(){
+
+
+
+document.addEventListener('keypress', function(e){
   let characterInput = document.getElementById("character");
   let heightInput = document.getElementById("height");
-  console.log('characterInput', characterInput, 'heightInput', heightInput)
-
   height = heightInput.value;
   character = characterInput.value;
-  console.log('height', height, 'character', character);
-  createTree(height);
+  if (13 == e.keyCode) {
+    if (height === "" || character === ""){
+      window.alert("Complte all fields");
+  }
+else{
+  createTree(height);}
+  }
+})
+
+let button = document.getElementById('button');
+
+button.addEventListener('click', function(e){
+  let characterInput = document.getElementById("character");
+  let heightInput = document.getElementById("height");
+  height = heightInput.value;
+  character = characterInput.value;
+
+    if (height === "" || character === ""){
+      window.alert("complete all fields");
+    }
+  else{
+    console.log('test');
+  createTree(height);}
+
 })
 
 function printSpaces (height){
   for (let spacesLine=0; spacesLine < height; spacesLine++)
     tree += space;
-    console.log("inside printSpaces for loop");
 
 }
 
@@ -30,7 +54,6 @@ function printAsterisks (height){
   for (let asteriskLine=0; asteriskLine < height; asteriskLine++)
 
     tree += character;
-    console.log("inside the printAstersk for loop");
 }
 
 function buildAtrunk (){
@@ -47,11 +70,9 @@ function createTree  (height){
   // if (line = height) {
   // baseLength = (printAsterisks(line).length + printAsterisks(line-1).length)
   tree += "\n";
-  console.log("inside the createTree function")
 }
 buildAtrunk();
 console.log(tree);
 }
 
 // Invoke the functio
-console.log("this is the end of the file");
